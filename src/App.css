@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -19,14 +18,12 @@ a {
 }
 
 body {
-  background: -webkit-gradient(linear, left top, right top, from(#f4f4f4), to(#aaa));
   background: linear-gradient(to right, #f4f4f4, #aaa);
 }
 
 .nav {
   background-color: #555;
 }
-
 .nav a:hover {
   opacity: 0.8;
 }
@@ -37,8 +34,7 @@ body {
 }
 
 .btn-delete {
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .delete-note {
@@ -59,26 +55,43 @@ textarea {
 }
 
 i.fa-plus {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 .highlight {
   background: #999;
-  -webkit-animation: highlight-animation 1s ease-in-out 2;
-          animation: highlight-animation 1s ease-in-out 2;
+  animation: highlight-animation 1s ease-in-out 2;
 }
 
-@-webkit-keyframes highlight-animation {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
+.close {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  width: 35px;
+  height: 35px;
+}
+.close:hover {
+  opacity: 0.3;
+  cursor: pointer;
+}
+.close::after,
+.close::before {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 25px;
+  width: 2px;
+  background-color: var(--bs-danger);
+}
+.close.cross-light::after,
+.close.cross-light::before {
+  background-color: var(--bs-light);
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }
 
 @keyframes highlight-animation {
@@ -92,15 +105,12 @@ i.fa-plus {
     opacity: 1;
   }
 }
-
 @media (max-width: 992px) {
   .bottom-bar {
     position: static !important;
   }
   .bottom-bar .btn-delete {
     position: static !important;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
 }
-/*# sourceMappingURL=App.css.map */

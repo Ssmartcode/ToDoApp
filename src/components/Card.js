@@ -42,24 +42,22 @@ const Card = ({
         className={`card ${findMatchingCard(input) ? "highlight" : ""}`}
       >
         <div className={`card-header ${headerBg} text-center text-light`}>
-          Importance: {importance}!
+          <span>Importance: {importance}!</span>
+          <span
+            className={`close ${importance === "High" && "cross-light"}`}
+            onClick={() => handleNoteDelete(id)}
+          ></span>
         </div>
         <div className="card-body">
-          <h3 className="card-title">{title}</h3>
-          <h6
-            className={`card-subtitle mb-2 ${
+          <h3 className="card-title text-center mb-3">{title}</h3>
+          <p
+            className={`card-subtitle mb-2 text-right ${
               lateDueDate(due) ? "text-danger" : "text-mute"
             }`}
           >
             Due on {due}
-          </h6>
+          </p>
           <div className="card-text"> {text}</div>
-          <div
-            className="delete-note text-end text-danger cursor-pointer mt-2"
-            onClick={() => handleNoteDelete(id)}
-          >
-            Delete
-          </div>
         </div>
       </div>
     </div>

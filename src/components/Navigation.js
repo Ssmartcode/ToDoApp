@@ -14,13 +14,13 @@ const Navigation = ({ handleButtonClick }) => {
         <li className="nav-item d-flex justify-content-between">
           <input
             type="text"
-            className="form-control"
+            className="form-control rounded-0 rounded-left"
             onChange={handleInputChange}
             value={term}
           />
           <input
             type="button"
-            className="btn btn-primary mx-2"
+            className="btn btn-primary rounded-0 rounded-right"
             value="Find note"
             onClick={() => handleButtonClick(term)}
           />
