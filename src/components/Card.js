@@ -10,12 +10,16 @@ const Card = ({
   handleNoteDelete,
 }) => {
   const cardRef = useRef();
+
+  // set header bg-color
   const headerBg =
     importance === "High"
       ? "bg-danger"
       : importance === "Medium"
       ? "bg-warning"
       : "bg-success";
+  // search for matchin word in the title of the note or in the content of it
+
   const findMatchingCard = (stringToMatch) => {
     return (
       (title.toLowerCase().includes(stringToMatch.toLowerCase()) ||
@@ -23,6 +27,8 @@ const Card = ({
       stringToMatch
     );
   };
+
+  //check if the given data is greater than today
   const lateDueDate = (dueDate) => {
     let today = new Date();
     let day = ("0" + today.getDate()).slice(-2);

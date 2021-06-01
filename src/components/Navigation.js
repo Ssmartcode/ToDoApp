@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 const Navigation = ({ handleButtonClick }) => {
   const [term, setTerm] = useState("");
+
+  // handler
   const handleInputChange = (e) => {
     setTerm(e.target.value);
   };

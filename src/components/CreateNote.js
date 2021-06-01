@@ -4,13 +4,15 @@ const CreateNote = ({ notes, setNotes }) => {
   const [dueInput, setDueInput] = useState("");
   const [importance, setImportance] = useState("Low");
   const [text, setText] = useState("");
+
+  // get data today and format it
   const dateToday = () => {
     let now = new Date();
     let day = ("0" + now.getDate()).slice(-2);
     let month = ("0" + (now.getMonth() + 1)).slice(-2);
     return now.getFullYear() + "-" + month + "-" + day;
   };
-  dateToday();
+
   return (
     <div className="create-note row gy-3 pb-3 mt-5 mx-auto row-cols-md-2 ">
       {/* Title */}

@@ -28,4 +28,3 @@ const BottomBar = ({ deleteAll }) => {
 };
 
 export default BottomBar;
-//  . Dicta accusamus repellat et. Id, quis commodi rem nam minus voluptatum. Possimus!

@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import { nanoid } from "nanoid";
+import { v4 } from "uuid";
 const Notes = ({ input, notes, filter, handleNoteDelete }) => {
   if (!notes.length)
     return (
@@ -8,6 +8,7 @@ const Notes = ({ input, notes, filter, handleNoteDelete }) => {
         No to do task. Go and add one.
       </h2>
     );
+
   return (
     <div className="row mt-5">
       {notes.map((note, index) => {
@@ -15,7 +16,7 @@ const Notes = ({ input, notes, filter, handleNoteDelete }) => {
         const { importance, title, due, text } = note;
         return (
           <Card
-            key={nanoid()}
+            key={v4()}
             id={index}
             input={input}
             importance={importance}
