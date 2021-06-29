@@ -114,3 +114,8 @@ i.fa-plus {
     transform: translateX(0);
   }
 }
+@media (max-width: 600px) {
+  .btn-delete {
+    display: none;
+  }
+}
